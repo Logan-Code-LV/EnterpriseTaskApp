@@ -1,0 +1,18 @@
+<ng-container *ngIf="isAddingTask">
+    <app-new-task [userId]="userId" (cancel)="onCancelAddTask()" />
+</ng-container>
+
+<section id="tasks">
+<header>
+ <h2> {{name}}'s Tasks</h2>
+ <menu>
+    <button (click)="onStartAddTask()"> Add Task </button>
+ </menu>
+</header>
+
+<ul>
+    <li *ngFor='let task of selectedUserTasks'>
+        <app-task [task]="task" />
+    </li>
+</ul>
+</section>
